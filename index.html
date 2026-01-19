@@ -2,55 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>USA Sports Analysis Tool</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Free USA sports match analysis tool showing win probability and insights.">
+  <title>USA Sports Analysis Tool</title>
+  <meta name="description" content="Free USA sports analysis with probability bars and AI-style insights.">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <header>
-    <h1>🏆 USA Sports Match Analysis</h1>
-    <p>NBA, NFL, MLB, NHL • Free • Statistical Insights</p>
-  </header>
+<header>
+  <h1>🏆 USA Sports Match Analysis</h1>
+  <p>NBA • NFL • MLB • NHL • Free • AI-style insights</p>
+</header>
 
-  <main class="card">
+<main class="card">
 
-    <div class="selectors">
-      <select id="sport" onchange="loadTeams()">
-        <option value="">Select Sport</option>
-        <option>NBA</option>
-        <option>NFL</option>
-        <option>MLB</option>
-        <option>NHL</option>
-      </select>
+  <div class="selectors">
+    <select id="sport" onchange="loadTeams()">
+      <option value="">Select Sport</option>
+      <option>NBA</option>
+      <option>NFL</option>
+      <option>MLB</option>
+      <option>NHL</option>
+    </select>
 
-      <select id="teamA">
-        <option value="">Team A</option>
-      </select>
+    <select id="teamA"><option value="">Team A</option></select>
+    <span class="vs">VS</span>
+    <select id="teamB"><option value="">Team B</option></select>
+  </div>
 
-      <span class="vs">VS</span>
+  <button onclick="analyzeMatch()">Analyze Match</button>
 
-      <select id="teamB">
-        <option value="">Team B</option>
-      </select>
+  <div id="result" class="result hidden">
+    <h2>Match Insights</h2>
+    <div class="prob-bars">
+      <div id="barA" class="bar"><span id="labelA"></span></div>
+      <div id="barB" class="bar"><span id="labelB"></span></div>
     </div>
+    <ul id="insights"></ul>
+  </div>
 
-    <button onclick="analyzeMatch()">Analyze Match</button>
+</main>
 
-    <div id="result" class="result hidden">
-      <h2>Match Insights</h2>
-      <p id="analysisText"></p>
-    </div>
+<footer>
+  <p>For informational purposes only • No betting advice</p>
+</footer>
 
-  </main>
-
-  <footer>
-    <p>For informational purposes only • No betting advice</p>
-  </footer>
-
-  <script src="data.js"></script>
-  <script src="script.js"></script>
+<script src="data.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
